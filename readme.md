@@ -16,3 +16,7 @@ Then we can download jtop directly through the pip tool.
 ```
 sudo -H pip3 install -U jetson-stats
 ```
+Type ```jtop``` directly into the command line, and a pop-up window will dynamically display the current work of Jetson.
+
+By pressing the number key 6, you can see the Jetson's jetpack version and even information about the SDK component directly in the window.
+
