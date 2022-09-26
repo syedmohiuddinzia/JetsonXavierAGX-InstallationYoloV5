@@ -115,7 +115,7 @@ Step 19. Serialize the model
 ```
 #sudo ./yolov5 -s [.wts] [.engine] [n/s/m/l/x/n6/s6/m6/l6/x6 or c/c6 gd gw]
 #example
-sudo ./yolov5 -s roadsign-yolov5n.wts roadsign-yolov5n.engine n
+sudo ./yolov5 -s <model_n>.wts <model_n>.engine n
 ```
 Here we use n because that is recommended for edge devices such as the NVIDIA Jetson platform.
 
