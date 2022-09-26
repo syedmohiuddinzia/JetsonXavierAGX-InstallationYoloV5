@@ -16,13 +16,15 @@ Then we can download jtop directly through the pip tool. </br>
 ```
 sudo -H pip3 install -U jetson-stats
 ```
- </br>
+
 ![1](https://github.com/syedmohiuddinzia/JetsonXavierAGX-InstallationYoloV5/blob/main/1.png)
-
+ </br>
 Type ```jtop``` directly into the command line, and a pop-up window will dynamically display the current work of Jetson. </br>
+ </br>
 ![2](https://github.com/syedmohiuddinzia/JetsonXavierAGX-InstallationYoloV5/blob/main/2.png)
-
-By pressing the number key 6, you can see the Jetson's jetpack version and even information about the SDK component directly in the window. </br>
+ </br>
+By pressing the number key 6, you can see the Jetson's jetpack version and even information about the SDK component directly in the window.
+</br>
 ![3](https://github.com/syedmohiuddinzia/JetsonXavierAGX-InstallationYoloV5/blob/main/3.png)
 
 
