@@ -26,8 +26,8 @@ sudo nano requirements.txt
 
 Step 4. Edit the following lines. And then press ```Ctrl+S``` then ```Ctrl+X```to save and exit.
 ```bash
-matplotlib==3.2.2
-numpy==1.19.4
-# torch>=1.7.0
-# torchvision>=0.8.1
+matplotlib==3.2.2 # change the version
+numpy==1.19.4 # change the version
+# torch>=1.7.0 # hide this line
+# torchvision>=0.8.1 # hide this line
 ```
