@@ -60,7 +60,8 @@ sudo python3 setup.py install
 ```
 ## For using TensorRT engine (Advance)
 
-NVIDIA® TensorRT™, is an SDK for high-performance deep learning inference, includes a deep learning inference optimizer and runtime that delivers low latency and high throughput for inference applications.
+NVIDIA® TensorRT™, is an SDK for high-performance deep learning inference, includes a deep learning inference optimizer and runtime that delivers low latency and high throughput for inference applications. </br>
+
 ![1](https://github.com/syedmohiuddinzia/JetsonXavierAGX-InstallationYoloV5/blob/main/Installation/1.svg)
 ![2](https://github.com/syedmohiuddinzia/JetsonXavierAGX-InstallationYoloV5/blob/main/Installation/2.png)
 
@@ -69,7 +70,8 @@ NVIDIA® TensorRT™, is an SDK for high-performance deep learning inference, in
 cd ~
 git clone https://github.com/wang-xinyu/tensorrtx
 ```
-### Step 10. Copy roadsign-yolov5n.pt file we downloaded from previous training into yolov5 directory
+### Step 10. Copy <model_n>.pt file we downloaded from previous training into yolov5 directory.
+Keep in mind to include (model)n.pt file, where n is used for edge devices.
 
 ### Step 11. Copy gen_wts.py from tensorrtx/yolov5 into yolov5 directory
 ```
@@ -78,9 +80,9 @@ cp tensorrtx/yolov5/gen_wts.py yolov5
 ### Step 12. Generate .wts file from PyTorch with .pt
 ```
 cd yolov5
-python3 gen_wts.py -w roadsign-yolov5n.pt
+python3 gen_wts.py -w <model_n>.pt
 ```
-The above will generate roadsign-yolov5n.wts
+The above will generate <model_n>.wts
 ### Step 13. Navigate to tensorrtx/yolov5
 ```
 cd ~
@@ -91,15 +93,16 @@ cd tensorrtx/yolov5
 nano yololayer.h
 ```
 ### Step 15. Change CLASS_NUM to the number of classes your model is trained.
+
 ### Step 16. Create a new build directory and navigate inside
 ```
 mkdir build 
 cd build
 ```
 
-Step 17. Copy the previously generated roadsign-yolov5n.wts file into this build directory
+Step 17. Copy the previously generated <model_n>.wts file into this build directory
 ```
-cp ~/yolov5/roadsign-yolov5n.wts .
+cp ~/yolov5/<model_n>.wts.
 ```
 
 Step 18. Compile it
@@ -110,12 +113,12 @@ make
 
 Step 19. Serialize the model
 ```
-sudo ./yolov5 -s [.wts] [.engine] [n/s/m/l/x/n6/s6/m6/l6/x6 or c/c6 gd gw]
+#sudo ./yolov5 -s [.wts] [.engine] [n/s/m/l/x/n6/s6/m6/l6/x6 or c/c6 gd gw]
 #example
 sudo ./yolov5 -s roadsign-yolov5n.wts roadsign-yolov5n.engine n
 ```
 Here we use n because that is recommended for edge devices such as the NVIDIA Jetson platform.
 
 ```
-sudo ./yolov5 -d roadsign-yolov5n.engine images
+sudo ./yolov5 -d <model_n>.engine images
 ```
